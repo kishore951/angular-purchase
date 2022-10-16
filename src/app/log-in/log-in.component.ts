@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  constructor( private myrouter:Router) { }
 
   userid=""
   password=""
@@ -19,9 +20,16 @@ export class LogInComponent implements OnInit {
       "userid":this.userid,
       "password":this.password
     }
+    if(this.userid == "admin" && this.password=="12345") {
+      this.myrouter.navigate(["/dashboard"])
+    
+    }else{
+      alert("invalid login")
+    }
     console.log(data)
     this.status=true
   }
+  
  
 
   ngOnInit(): void {
