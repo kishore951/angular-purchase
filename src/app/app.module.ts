@@ -5,17 +5,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const appRoutes:Routes=[
   {
     path:"",component:LogInComponent
+  },{
+    path:"new",component:SignUpComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent
+    LogInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
